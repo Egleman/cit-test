@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  cit-vue:
+    container_name: cit-vue
+    build:
+      context: ./
+      dockerfile: frontend/Dockerfile
+    volumes:
+      - ./frontend/:/usr/app
+    tty: true
+    ports:
+      - "8090:8090"

@@ -1,0 +1,27 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  &-svg {
+    display: flex;
+    flex-shrink: 0;
+  }
+  &-text {
+    color: rgb(0, 0, 0);
+    font-family: "Lora", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+    text-transform: uppercase;
+  }
+  &_white {
+    .header__logo-text {
+      color: #fff;
+    }
+    .header__logo-svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}

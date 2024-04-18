@@ -1,0 +1,11 @@
+.hero {
+  background: url("../images/hero-section/background.jpg") center/cover no-repeat;
+  padding: 259px 0 415px 0;
+  &__title {
+    color: #fff;
+    font-family: "Lora", sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 102px;
+  }
+}
