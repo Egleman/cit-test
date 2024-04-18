@@ -1,28 +1,69 @@
 .header {
   position: fixed;
-  max-width: 1320px;
   width: 100%;
   top: 24px;
   left: 50%;
-  margin: 0 15px;
-  box-sizing: border-box;
   transform: translateX(-50%);
-  padding: 20px 24px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.04);
-  background: rgb(239, 240, 244);
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.04);
+    background: rgb(239, 240, 244);
   }
-
   &__block {
     display: flex;
     align-items: center;
     gap: 16px;
     max-width: 398px;
     width: 100%;
+    position: relative;
+  }
+  &__pagelist {
+    position: absolute;
+    max-width: 249px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+    background: rgb(239, 240, 244);
+    padding: 8px;
+    box-sizing: border-box;
+    top: calc(100% + 38px);
+    right: 0;
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      transition: .3s all;
+      border-radius: 6px;
+      svg {
+        path {
+          transition: .3s all;
+        }
+      }
+      &:hover {
+        background: $secondary;
+        color: #fff;
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+    &-link.router-link-active {
+        background: $secondary;
+        color: #fff;
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+    }
   }
   &__burger {
     display: flex;
@@ -36,5 +77,75 @@
     padding: 0;
     width: 40px;
     height: 40px;
+    transition: .3s all;
+  }
+  &__search {
+    width: 100%;
+    &-button {
+      display: none;
+    }
+  }
+}
+@media (hover: hover) {
+  .header {
+    &__burger {
+      &:hover {
+        background: $primary;
+      }
+    }
+  }
+}
+@media (hover: none) {
+  .header {
+    &__burger {
+      &:active {
+        background: $primary;
+      }
+    }
+  }
+}
+@media (max-width: 798px) {
+  .header {
+    &__search {
+      position: fixed;
+      top: -24px;
+      bottom: 0;
+      left: -1px;
+      right: -1px;
+      width: calc(100% + 2px);
+      box-sizing: border-box;
+      transition: .3s all;
+      height: 100vh;
+      display: none;
+      background: rgba(0, 0, 0, 0.4);
+      &-wrapper {
+        padding: 40px 20px;
+        background: rgb(239, 240, 244);
+        transform: translateY(-160px);
+      }
+      &-button {
+        display: flex;
+      }
+    }
+    &__search.active {
+      display: block;
+      animation: openSearchModal .3s forwards;
+      .header__search-wrapper {
+          animation: openMoveSearchForm .6s forwards; 
+      }
+    }
+    &__block {
+      max-width: max-content;
+    }
+  }
+}
+@media (max-width: 606px) {
+  .header {
+    &__wrapper {
+      padding: 20px 10px;
+    }
+    &__block {
+      gap: 12px;
+    }
   }
 }

@@ -5,10 +5,13 @@
       class="input"
       :class="{'input_small': small}"
       @input="(e) => emit('update:modelValue', e.target.value)"
+      ref="mask"
   >
 </template>
 <script setup>
-import { defineProps } from 'vue';
+import './input.scss';
+import { defineProps, onMounted, ref } from 'vue';
+import { useMask } from '@/hooks/useMask';
 const emit = defineEmits(['update:modelValue']);
 const props = defineProps({
   placeholder: {
@@ -18,7 +21,14 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-
+  phoneMask: {
+    type: Boolean,
+    default: false
+  }
 });
-const {placeholder} = props;
+const {placeholder, small, phoneMask} = props;
+const mask = ref(null);
+onMounted(() => {
+  if (phoneMask) useMask(mask.value);
+})
 </script>

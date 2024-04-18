@@ -9,3 +9,39 @@
     line-height: 102px;
   }
 }
+@media (max-width: 1460px) {
+  .hero {
+    padding: 259px 0 256px 0;
+  }
+}
+@media (max-width: 1230px) {
+  .hero {
+    &__title {
+      font-size: 64px;
+      line-height: 86px;
+    }
+  }
+}
+@media (max-width: 1022px) {
+  .hero {
+    padding: 200px 0;
+  }
+}
+@media (max-width: 798px) {
+  .hero {
+    padding: 150px 0;
+    &__title {
+      font-size: 45px;
+      line-height: 67px;
+    }
+  }
+}
+@media (max-width: 606px) {
+  .hero {
+    padding: 160px 0 100px 0;
+    &__title {
+      font-size: 35px;
+      line-height: 57px;
+    }
+  }
+}
