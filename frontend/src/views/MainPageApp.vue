@@ -1,7 +1,7 @@
 <template>
   <HeaderApp/>
   <MainHeroSection/>
-  <BookSection url="u9B6Vjaqtvn7/data"/>
+  <BookSection url="u9B6Vjaqtvn7/data" title="Новинки"/>
   <AboutSection/>
   <SubscribeSection/>
   <FooterApp/>

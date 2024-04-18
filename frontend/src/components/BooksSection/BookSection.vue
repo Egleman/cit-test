@@ -2,8 +2,8 @@
     <section class="books section">
         <div class="container">
             <div class="section__title">
-                <h2 class="title">Новинки</h2>
-                <router-link to="/catalog" class="section__title-more">
+                <h2 class="title">{{ title }}</h2>
+                <router-link to="/catalog" class="section__title-more" v-if="showMoreBtn">
                     Посмотреть больше
                 </router-link>
             </div>
@@ -26,8 +26,15 @@ import { defineProps } from 'vue';
 const props = defineProps({
   url: {
     type: String,
+  },
+  title: {
+    type: String
+  },
+  showMoreBtn: {
+    type: Boolean,
+    default: true
   }
 });
-const {url} = props;
+const {url, title, showMoreBtn} = props;
 const { data, isLoading } = useBookHelper(url);
 </script>

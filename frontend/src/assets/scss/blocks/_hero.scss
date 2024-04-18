@@ -8,10 +8,17 @@
     font-weight: 500;
     line-height: 102px;
   }
+  &_catalog {
+    padding: 140px 65px;
+    background: url("../images/subscribe-section/bg-2.jpg") center/cover no-repeat;
+  }
 }
 @media (max-width: 1460px) {
   .hero {
     padding: 259px 0 256px 0;
+    &_catalog {
+      padding: 140px 65px;
+    }
   }
 }
 @media (max-width: 1230px) {
