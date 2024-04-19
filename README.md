@@ -20,7 +20,7 @@ Nodejs version 21 was used for development
 
 ### `npm install`
 
-please go to the /frontend folder and run npm install to install all the nessery npm modules.
+please go to the ./frontend folder and run npm install to install all the nessery npm modules.
 
 ### `npm run dev`
 
