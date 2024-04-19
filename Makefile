@@ -9,3 +9,7 @@ docker-build:
 #остановить контейнеры в текущем каталоге
 docker-down:
 	sudo docker-compose down
+
+#Запустить приложение в контейнере
+docker-start:
+	sudo docker exec -ti cit-vue npm run dev
