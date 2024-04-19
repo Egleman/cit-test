@@ -37,4 +37,4 @@ Build this project for production.
 
 #### .env
 
-Token for server request and base URL for server requests in .env file
+Token for server request and base URL for server requests in ./frontend/.env file
