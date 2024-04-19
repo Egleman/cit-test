@@ -62,3 +62,20 @@
         line-height: 19px;
     }
 }
+@media (max-width: 606px) {
+    .card {
+        &__label {
+            font-size: 14px;
+        }
+        &__price {
+            font-size: 14px;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .card {
+        &__image {
+            height: 280px;
+        }
+    }
+}

@@ -2,8 +2,7 @@
   position: fixed;
   width: 100%;
   top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  min-width: 303px;
   &__wrapper {
     display: flex;
     align-items: center;
