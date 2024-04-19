@@ -7,7 +7,6 @@
   </router-link>
 </template>
 <script setup>
-import './logo.scss'
 import { defineProps } from 'vue';
 const props = defineProps({
   white: {

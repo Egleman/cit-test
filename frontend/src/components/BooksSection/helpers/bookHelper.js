@@ -1,10 +1,10 @@
 import {ref} from "vue";
-import Fetch from "@/api/api";
+import Http from "@/http/http";
 export const useBookHelper = (url) => {
     const data = ref([]);
     const isLoading = ref(true);
     const getData = async () => {
-        const response = await Fetch.get(url)
+        const response = await Http.get(url)
         data.value.push(...response);
         isLoading.value = false;
     }

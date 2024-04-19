@@ -1,27 +1,42 @@
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  &-svg {
     display: flex;
-    flex-shrink: 0;
-  }
-  &-text {
-    color: rgb(0, 0, 0);
-    font-family: "Lora", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 31px;
-    text-transform: uppercase;
-  }
-  &_white {
-    .header__logo-text {
-      color: #fff;
+    align-items: center;
+    gap: 16px;
+    &__svg {
+      display: flex;
+      flex-shrink: 0;
     }
-    .header__logo-svg {
-      path {
-        fill: #fff;
+    &__text {
+      color: rgb(0, 0, 0);
+      font-family: "Lora", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 31px;
+      text-transform: uppercase;
+    }
+    &_white {
+      .logo__text {
+        color: #fff;
+      }
+      .logo__svg {
+        path {
+          fill: #fff;
+        }
       }
     }
   }
-}
+  @media (max-width: 798px) {
+    .logo {
+        &__text {
+            font-size: 18px;
+        }
+    }
+  }
+  @media (max-width: 606px) {
+    .logo {
+        gap: 10px;
+        &__text {
+            font-size: 14px;
+        }
+    }
+  }

@@ -5,12 +5,15 @@
                 <h2 class="title">Узнать о новом поступление</h2>
             </div>
             <div class="subscribe__wrapper">
-                <form action="#" class="subscribe__form">
-                    <InputApp placeholder="Имя" v-model="formBody.name"/>
-                    <InputApp placeholder="Телефон" phoneMask v-model="formBody.phone"/>
-                    <InputApp placeholder="Email" v-model="formBody.email"/>
+                <form v-if="!isSendForm" action="#" class="subscribe__form" @submit.prevent="sendData">
+                    <InputApp placeholder="Имя" v-model="formBody.name" v-model:error="formErrors.name"/>
+                    <InputApp placeholder="Телефон" phoneMask v-model="formBody.phone" v-model:error="formErrors.phone"/>
+                    <InputApp placeholder="Email" v-model="formBody.email" v-model:error="formErrors.email"/>
                     <button type="submit" class="button">Отправить</button>
                 </form>
+                <div v-else class="subscribe__message">
+                  {{ response_message }}
+                </div>
                 <div class="subscribe__wrapper-text">
                     Поступление новой литературы в библиотеку всегда является знаменательным событием, 
                     как для библиотекарей, так и для читателей. Интересные авторы, разнообразные 
@@ -26,11 +29,7 @@
     </section>
 </template>
 <script setup>
-import { ref } from "vue";
 import InputApp from '@/components/ui/InputApp/InputApp.vue';
-const formBody = ref({
-    name: '',
-    phone: '',
-    email: ''
-})
+import {useSendSubscribe} from "./helpers/sendSubscribe.js";
+const { isSendForm, formBody, formErrors, sendData, response_message } = useSendSubscribe()
 </script>
