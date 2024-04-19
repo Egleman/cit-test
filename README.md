@@ -1,5 +1,3 @@
-This is the repo for tutorial in my blog post [Create Contact form with react and php](https://blog.bitsrc.io/how-to-build-a-contact-form-with-react-js-and-php-d5977c17fec0).
-
 ## Usage of complete project.
 
 Please clone this repo and in the project root directory, Please run:
